@@ -1,0 +1,79 @@
+import { Callout } from "nextra-theme-docs";
+
+# Setup
+
+Make sure you have read the [prerequisites](https://avoku.github.io/bot/getting-started/prerequisites) first to avoid any issues during the setup. Also, make sure to have the compiled bot jar downloaded.
+
+- Compiled Download: [Download Compiled Bot Jar](https://bot.hs50.cc/download)
+
+### Setting up
+
+1. Create a folder on your desktop and give it any name you prefer. The name doesn't matter.
+2. Drag the compiled bot jar into the folder.
+3. Create a text file in the same folder and name it "run". Then, change the file extension from ".txt" to ".bat" and make rename the
+   file to "run". Something like this, `run.bat`.
+4. Use a file editor or Notepad to open the `run.bat` file.
+5. Add the following lines to the `run.bat` file:
+
+   ```batch
+   :: If your compiled bot jar has a different name, make sure to change it accordingly.
+   java -jar RankedBot.jar
+   pause
+   Save the run.bat file.
+   ```
+
+When you run the `run.bat` file, it will create a folder and a database file. It will also open a terminal window. Inside the folder,
+you will find all the necessary configurations and files for fonts, themes, etc.
+
+During the setup process, you might encounter an error
+or receive a message in the terminal window indicating that there is no token inside the `config.yml` file. To resolve this, you need to
+create an application in the Discord Developer Portal to create a bot within Discord and obtain the bot's token.
+
+### Creating a Bot
+
+<Callout type="error">
+  Do Not share your Discord bot's token to anybody, as they can have access to
+  pretty much everything.
+</Callout>
+
+1. Go to the Discord Developer Portal website landing page. On the top, you will see a blue button labeled "New Application".
+   Click on it.
+2. A modal will appear, asking you to provide a name for your application. You can choose any name you like. Make sure to read and agree
+   to the Discord Developer Terms of Service and Developer Policy.
+3. After naming your bot, you will be redirected to the bot's settings page. Here, you can modify various details such as description, name,
+   tags, etc. Look for the sidebar on the left side of the page and click on the "Bot" section.
+4. On the right side of the page, you will see a blue button labeled "Add Bot". Click on it. If a modal appears, asking for confirmation,
+   click on the button that says "Yes, do it!".
+5. On the top of the page, just below the bot's username. There, you will find the bot's token. Copy the token as you will need
+   to paste it into the `config.yml` file.
+   ```yml
+   # Bot's token
+   token: PASTE_TOKEN_HERE
+   ```
+6. Scroll down till you see "Privileged Gateway Intents" and enable all three options you will see there.
+   `[ PRESENCE INTENT, SERVER MEMBERS INTENT, MESSAGE CONTENT INTENT ]`
+
+### How to invite your bot
+
+1. On the Discord Developer Portal dashboard, navigate to the "OAuth2" tab located in the left sidebar and click on "URL Generator".
+2. In the "Scopes" section, check the box next to "bot".
+3. In the "Bot Permissions" section, check the box next to "Administrator".
+4. Scroll down to the bottom of the page and click on the blue button labeled "Copy".
+5. Open a new browser window or tab, and paste the copied link into the address bar.
+6. A modal will appear, asking you to select a server to invite your bot to. Choose any server you want the bot to join.
+7. Click on the blue button labeled "Continue", and then click "Authorize" to grant the bot access to the selected server.
+
+### Finishing Setup
+
+After completing all the above steps, you can run the run.bat file located in the folder where you have all the necessary folders and
+files. Here's what you need to do:
+
+1. Go to the folder where you have the run.bat file and other required files.
+2. Double-click on the run.bat file to execute it.
+3. A terminal window will open, and the bot will start running.
+4. Wait for the bot to complete its necessary tasks. This may take some time depending on the bot's functionality and the size of your
+   server.
+5. After a while, you will see a message inside the terminal window stating that the RankedBot has been enabled.
+
+That's it! You have successfully run the bot. You can now interact with it on your Discord server. If you have encountered any issues during
+this proccess, make sure to let us know in our Discord [server](https://discord.gg/2QEYjQyH87).
