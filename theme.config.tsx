@@ -5,7 +5,7 @@ export default {
   logo: (
     <>
       <img src="logo.svg" width={32} height={32} />
-      <h1 style={{ fontSize: 21, marginLeft: 5, fontWeight: 600 }}>Developer</h1>
+      <h1 style={{ fontSize: 18, marginLeft: 5, fontWeight: 600 }}>Documentation</h1>
     </>
   ),
   sidebar: {
@@ -23,32 +23,35 @@ export default {
   },
   footer: {
     text: (
+      <div style={{ display: 'flex', alignItems: 'center', gap: '10px'}}>
+      <img style={{ opacity: 0.4 }} src="logo.svg" width={32} height={32} />
       <span>
-        MIT {new Date().getFullYear()} ©{' '}
-        <a href="https://nextra.site" target="_blank">
-          Nextra
+      © {new Date().getFullYear()} {' '}
+        <a href="https://bot.hs50.cc">
+          Avoku
         </a>
         .
       </span>
+      </div>
     )
   },
   project: {
-    link: "https://github.com/avoku/docs",
+    link: "https://github.com/avoku/avoku.github.io",
   },
   head: () => {
     const { asPath, defaultLocale, locale } = useRouter()
     const { frontMatter } = useConfig()
     const url =
-      'https://my-app.com' +
+      'https://avoku.github.io' +
       (defaultLocale === locale ? asPath : `/${locale}${asPath}`)
  
     return (
       <>
         <meta property="og:url" content={url} />
-        <meta property="og:title" content={frontMatter.title || 'Nextra'} />
+        <meta property="og:title" content={frontMatter.title || 'Avoku'} />
         <meta
           property="og:description"
-          content={frontMatter.description || 'The next site builder'}
+          content={frontMatter.description || 'Documentation page for all projects made by Avoku.'}
         />
       </>
     )
