@@ -3,19 +3,25 @@ import { useRouter } from 'next/router'
 
 import Logo from './components/logo'
 import Footer from './components/footer'
+import Statistics from './components/statistics'
 
 export default {
     logo: <Logo wordmark={false} label={true} />,
     footer: {
-        text: (
-            <Footer />
-        ),
+        text: <Footer />,
     },
     project: {
         link: 'https://github.com/avoku/avoku.github.io',
     },
     chat: {
-        link: 'https://discord.gg/zKe7dW7Z3T'
+        link: 'https://discord.gg/zKe7dW7Z3T',
+    },
+    sidebar: {
+        defaultMenuCollapseLevel: 1,
+        toggleButton: true,
+    },
+    toc: {
+        extraContent: <Statistics />,
     },
     head: () => {
         const { asPath, defaultLocale, locale } = useRouter()
