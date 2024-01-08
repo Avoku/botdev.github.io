@@ -1,6 +1,7 @@
 {
   "name": "documentation",
   "version": "1.0.0",
+  "packageManager": "pnpm@8.9.2",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
