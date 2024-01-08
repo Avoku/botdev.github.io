@@ -5,7 +5,7 @@ import Logo from './components/logo'
 import Footer from './components/footer'
 
 export default {
-    logo: <Logo wordmark={true} label={true} />,
+    logo: <Logo wordmark={false} label={true} />,
     footer: {
         text: (
             <Footer />
