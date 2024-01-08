@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 12px;
+    background-color: #10b98110;
+    border-radius: 8px;
+
+    margin-top: 15px;
+}
+
+.container > .wrapper {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.container > .wrapper > svg {
+    height: 24px;
+    width: 24px;
+}
+
+.container > .wrapper > p {
+    color: lightgray;
+    font-size: 13px;
+    font-weight: 400;
+}
+
+.container > a > button {
+    color: #10b981;
+    font-size: 14px;
+    font-weight: 500;
+
+    padding: 5px 12px;
+    background-color: #10b98140;
+    border-radius: 6px;
+
+    transition: 0.25s cubic-bezier(0.075, 0.82, 0.165, 1);
+    cursor: pointer;
+}
+
+.container > a > button:hover {
+    background-color: #10b98160;
+}

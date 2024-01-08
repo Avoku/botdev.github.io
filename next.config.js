@@ -1,18 +1,15 @@
 /** @type {import('next').NextConfig} */
-const withNextra = require("nextra")({
-  theme: "nextra-theme-docs",
-  themeConfig: "./theme.config.tsx",
-  staticImage: true,
-  latex: true,
-  flexsearch: {
-    codeblocks: false,
-  },
-  defaultShowCopyCode: true,
-});
+const withNextra = require('nextra')({
+    theme: 'nextra-theme-docs',
+    themeConfig: './theme.config.tsx',
+    staticImage: true,
+    latex: true,
+    defaultShowCopyCode: true,
+})
 
 module.exports = withNextra({
-  output: "export",
-  images: {
-    unoptimized: true,
-  },
-});
+    output: 'export',
+    images: {
+        unoptimized: true,
+    },
+})

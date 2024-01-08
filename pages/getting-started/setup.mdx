@@ -1,12 +1,19 @@
-import { Callout } from "nextra-theme-docs";
-
-# Setup
+import { Callout } from 'nextra-theme-docs'
+import Card from '../../components/card.tsx'
+import { faDownload } from '@fortawesome/free-solid-svg-icons'
 
 Make sure you have read the [prerequisites](https://avoku.github.io/bot/getting-started/prerequisites) first to avoid any issues during the setup. Also, make sure to have the compiled bot jar downloaded.
 
-- Compiled Download: [Download Compiled Bot Jar](https://bot.hs50.cc/download)
+<Card
+    icon={faDownload}
+    description="Compiled build of the bot."
+    link={{
+        text: 'Download',
+        url: 'https://polymart.org/download/3636/discord-ranked-bot',
+    }}
+/>
 
-### Setting up
+## Setup
 
 1. Create a folder on your desktop and give it any name you prefer. The name doesn't matter.
 2. Drag the compiled bot jar into the folder.
@@ -15,12 +22,12 @@ Make sure you have read the [prerequisites](https://avoku.github.io/bot/getting-
 4. Use a file editor or Notepad to open the `run.bat` file.
 5. Add the following lines to the `run.bat` file:
 
-   ```batch
-   :: If your compiled bot jar has a different name, make sure to change it accordingly.
-   java -jar RankedBot.jar
-   pause
-   Save the run.bat file.
-   ```
+    ```batch
+    :: If your compiled bot jar has a different name, make sure to change it accordingly.
+    java -jar RankedBot.jar
+    pause
+    Save the run.bat file.
+    ```
 
 When you run the `run.bat` file, it will create a folder and a database file. It will also open a terminal window. Inside the folder,
 you will find all the necessary configurations and files for fonts, themes, etc.
@@ -31,9 +38,9 @@ create an application in the Discord Developer Portal to create a bot within Dis
 
 ### Creating a Bot
 
-<Callout type="error">
-  Do Not share your Discord bot's token to anybody, as they can have access to
-  pretty much everything.
+<Callout type="warning">
+    Do not share the bot's token with anybody, as they could gain access to
+    everything.
 </Callout>
 
 1. Go to the Discord Developer Portal website landing page. On the top, you will see a blue button labeled "New Application".
@@ -46,10 +53,10 @@ create an application in the Discord Developer Portal to create a bot within Dis
    click on the button that says "Yes, do it!".
 5. On the top of the page, just below the bot's username. There, you will find the bot's token. Copy the token as you will need
    to paste it into the `config.yml` file.
-   ```yml
-   # Bot's token
-   token: PASTE_TOKEN_HERE
-   ```
+    ```yml
+    # Bot's token
+    token: PASTE_TOKEN_HERE
+    ```
 6. Scroll down till you see "Privileged Gateway Intents" and enable all three options you will see there.
    `[ PRESENCE INTENT, SERVER MEMBERS INTENT, MESSAGE CONTENT INTENT ]`
 
