@@ -7,9 +7,4 @@ const withNextra = require('nextra')({
     defaultShowCopyCode: true,
 })
 
-module.exports = withNextra({
-    output: 'export',
-    images: {
-        unoptimized: true,
-    },
-})
+module.exports = withNextra()
