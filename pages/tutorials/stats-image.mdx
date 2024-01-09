@@ -1,0 +1,78 @@
+import { FileTree, Callout } from 'nextra/components'
+
+## Quick Setup
+
+<Callout type="warning">
+    Ensure that the file tree mirrors the structure shown below.
+</Callout>
+
+Download the default image below by clicking [here](/assets/default.png). The image file should be named `default.png`. Afterwards, drag it into
+the `RankedBot/themes` folder. There must be atleast one image named `default.png`.
+
+<FileTree>
+    <FileTree.Folder name="RankedBot" defaultOpen>
+        <FileTree.Folder name="themes" defaultOpen>
+            <FileTree.File name="default.png" />
+        </FileTree.Folder>
+    </FileTree.Folder>
+</FileTree>
+
+Now, for the font, you can download it by clicking [here](/assets/stats.otf). The file should be named `stats.otf`, Afterwards, drag it into
+the `RankedBot/fonts` folder.
+
+<FileTree>
+    <FileTree.Folder name="RankedBot" defaultOpen>
+        <FileTree.Folder name="fonts" defaultOpen>
+            <FileTree.File name="stats.otf" />
+        </FileTree.Folder>
+    </FileTree.Folder>
+</FileTree>
+
+## Advanced Setup
+
+If you're planning on creating a custom image, the image size has to be `960x540`. The reason is that it balances both performance and quality.
+
+If you want to modify the text values, such as location, size, and color, you can go over to your config. If you want to hide a stat,
+you can set the location to a high value, making it go out of bounds. An example config is shown below.
+
+```yaml
+ign-size: 36
+ign-color: 255,255,255
+ign-pixels: 30,46
+
+ELO-size: 40
+ELO-color: 255,133,133
+ELO-pixels: 305,45
+
+PEAKELO-size: 26
+PEAKELO-color: 255,133,133
+PEAKELO-pixels: 486,28
+
+WINS-size: 34
+WINS-color: 255,133,133
+WINS-pixels: 142,243
+
+WINSTREAK-size: 34
+WINSTREAK-color: 255,133,133
+WINSTREAK-pixels: 237,381
+
+HIGHESTWS-size: 34
+HIGHESTWS-color: 255,133,133
+HIGHESTWS-pixels: 240,416
+
+LOSSES-size: 34
+LOSSES-color: 255,133,133
+LOSSES-pixels: 199,278
+
+LOSSSTREAK-size: 30
+LOSSSTREAK-color: 255,255,255
+LOSSSTREAK-pixels: 9999,9999
+
+HIGHESTLS-size: 30
+HIGHESTLS-color: 255,255,255
+HIGHESTLS-pixels: 9999,9999
+
+GAMES-size: 34
+GAMES-color: 255,133,133
+GAMES-pixels: 187,209
+```

@@ -1,6 +1,6 @@
 import styles from './logo.module.css'
 
-export default function Logo(props: { wordmark?: boolean, label?: boolean }) {
+export default function Logo(props: { wordmark?: boolean; label?: boolean }) {
     return (
         <div className={styles.wrapper}>
             <svg
