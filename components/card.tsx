@@ -3,6 +3,7 @@ import Link from 'next/link'
 
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import type { IconProp } from '@fortawesome/fontawesome-svg-core'
+import { faArrowRight } from '@fortawesome/free-solid-svg-icons'
 
 export default function Card(props: {
     icon: IconProp
@@ -19,7 +20,10 @@ export default function Card(props: {
                 <p>{props.description}</p>
             </div>
             <Link href={props.link.url}>
-                <button>{props.link.text}</button>
+                <button>
+                    {props.link.text}
+                    <FontAwesomeIcon icon={faArrowRight} />
+                </button>
             </Link>
         </div>
     )

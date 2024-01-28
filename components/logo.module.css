@@ -9,6 +9,10 @@
     min-width: 32px;
 }
 
+.wrapper > svg > path {
+    fill: var(--shiki-color-text);
+}
+
 .wrapper > h1 {
     width: 0%;
 
@@ -33,5 +37,7 @@
 
     padding: 3px 5px;
     background-color: #10b98140;
+
+    border: 1px solid #0f865f90;
     border-radius: 6px;
 }

@@ -6,10 +6,15 @@ import Footer from './components/footer'
 import Statistics from './components/statistics'
 
 export default {
-    logo: <Logo wordmark={false} label={true} />,
+    logo: <Logo />,
     footer: {
-        text: <Footer />,
+        text: <Footer />
     },
+    useNextSeoProps() {
+        return {
+          titleTemplate: '%s | Avoku'
+        }
+      },
     project: {
         link: 'https://github.com/avoku/avoku.github.io',
     },
@@ -23,28 +28,7 @@ export default {
     toc: {
         extraContent: <Statistics />,
     },
-    head: () => {
-        const { asPath, defaultLocale, locale } = useRouter()
-        const { frontMatter } = useConfig()
-        const url =
-            'https://avoku.github.io' +
-            (defaultLocale === locale ? asPath : `/${locale}${asPath}`)
-
-        return (
-            <>
-                <meta property="og:url" content={url} />
-                <meta
-                    property="og:title"
-                    content={frontMatter.title || 'Avoku'}
-                />
-                <meta
-                    property="og:description"
-                    content={
-                        frontMatter.description ||
-                        'Documentation page for the ranked bot.'
-                    }
-                />
-            </>
-        )
-    },
+    nextThemes: {
+        defaultTheme: 'dark'
+    }
 }

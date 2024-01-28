@@ -14,7 +14,7 @@ export function useResources(): ResourceData | null {
     const [data, setData] = useState<ResourceData | null>(null)
 
     useEffect(() => {
-        const url = `https://api.polymart.org/v1/getResourceInfo?api_key=${process.env.POLYMART_API_KEY_DO_NOT_SHARE}&resource_id=3636`
+        const url = `https://api.polymart.org/v1/getResourceInfo?resource_id=3636`
 
         const fetchData = async () => {
             try {
