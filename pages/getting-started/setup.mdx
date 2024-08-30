@@ -1,86 +1,77 @@
 import { Callout } from 'nextra-theme-docs'
-import Card from '../../components/card.tsx'
-import { faDownload } from '@fortawesome/free-solid-svg-icons'
+import VideoEmbed from '~/components/embed'
 
-Make sure you have read the [prerequisites](https://avoku.github.io/bot/getting-started/prerequisites) first to avoid any issues during the setup. Also, make sure to have the compiled bot jar downloaded.
+# Setting up the bot
 
-<Card
-    icon={faDownload}
-    description="Compiled build of the bot."
-    link={{
-        text: 'Download',
-        url: 'https://polymart.org/download/3636/discord-ranked-bot',
-    }}
-/>
-
-## Setup
-
-1. Create a folder on your desktop and give it any name you prefer. The name doesn't matter.
-2. Drag the compiled bot jar into the folder.
-3. Create a text file in the same folder and name it "run". Then, change the file extension from ".txt" to ".bat" and make rename the
-   file to "run". Something like this, `run.bat`.
-4. Use a file editor or Notepad to open the `run.bat` file.
-5. Add the following lines to the `run.bat` file:
-
-    ```batch
-    :: If your compiled bot jar has a different name, make sure to change it accordingly.
-    java -jar RankedBot.jar
-    pause
-    Save the run.bat file.
-    ```
-
-When you run the `run.bat` file, it will create a folder and a database file. It will also open a terminal window. Inside the folder,
-you will find all the necessary configurations and files for fonts, themes, etc.
-
-During the setup process, you might encounter an error
-or receive a message in the terminal window indicating that there is no token inside the `config.yml` file. To resolve this, you need to
-create an application in the Discord Developer Portal to create a bot within Discord and obtain the bot's token.
-
-### Creating a Bot
-
-<Callout type="warning">
-    Do not share the bot's token with anybody, as they could gain access to
-    everything.
+<Callout type="default">
+    Make sure you have read the prerequisites to avoid any issues during the
+    setup.
 </Callout>
 
-1. Go to the Discord Developer Portal website landing page. On the top, you will see a blue button labeled "New Application".
-   Click on it.
-2. A modal will appear, asking you to provide a name for your application. You can choose any name you like. Make sure to read and agree
-   to the Discord Developer Terms of Service and Developer Policy.
-3. After naming your bot, you will be redirected to the bot's settings page. Here, you can modify various details such as description, name,
-   tags, etc. Look for the sidebar on the left side of the page and click on the "Bot" section.
-4. On the right side of the page, you will see a blue button labeled "Add Bot". Click on it. If a modal appears, asking for confirmation,
-   click on the button that says "Yes, do it!".
-5. On the top of the page, just below the bot's username. There, you will find the bot's token. Copy the token as you will need
-   to paste it into the `config.yml` file.
-    ```yml
-    # Bot's token
-    token: PASTE_TOKEN_HERE
-    ```
-6. Scroll down till you see "Privileged Gateway Intents" and enable all three options you will see there.
-   `[ PRESENCE INTENT, SERVER MEMBERS INTENT, MESSAGE CONTENT INTENT ]`
+This section will guide you through the steps to set up the bot. A video version of this can be found below.
 
-### How to invite your bot
+<VideoEmbed id="fubINNN9ey4" />
 
-1. On the Discord Developer Portal dashboard, navigate to the "OAuth2" tab located in the left sidebar and click on "URL Generator".
-2. In the "Scopes" section, check the box next to "bot".
-3. In the "Bot Permissions" section, check the box next to "Administrator".
-4. Scroll down to the bottom of the page and click on the blue button labeled "Copy".
-5. Open a new browser window or tab, and paste the copied link into the address bar.
-6. A modal will appear, asking you to select a server to invite your bot to. Choose any server you want the bot to join.
-7. Click on the blue button labeled "Continue", and then click "Authorize" to grant the bot access to the selected server.
+You can download the bot from [here](https://polymart.org/resource/discord-ranked-bot.3636).
 
-### Finishing Setup
+## Local Setup
 
-After completing all the above steps, you can run the run.bat file located in the folder where you have all the necessary folders and
-files. Here's what you need to do:
+1. Create a folder on your desktop.
+2. Move the bot jar file into the folder.
+3. Inside the folder, create a text file and name it "run".
+4. Open the text file and paste the following inside:
 
-1. Go to the folder where you have the run.bat file and other required files.
-2. Double-click on the run.bat file to execute it.
-3. A terminal window will open, and the bot will start running.
-4. Wait for the bot to complete its necessary tasks. This may take some time depending on the bot's functionality and the size of your
-   server.
-5. After a while, you will see a message inside the terminal window stating that the RankedBot has been enabled.
+```batch
+:: If your compiled bot jar has a different name, make sure to change it accordingly.
+java -jar RankedBot.jar
+pause
+```
 
-That's it! You have successfully run the bot. You can now interact with it on your Discord server. If you have encountered any issues during
-this proccess, make sure to let us know in our Discord [server](https://discord.gg/2QEYjQyH87).
+5. Rename the text file and change its file extension to `.bat`, so it should look like `run.bat`.
+
+When you run the file, it will create all the necessary folders and files, such as those for fonts, themes, databases, etc.
+
+If you encounter an error or see a message in the terminal window indicating that there is no token in the config.yml file, you need to obtain the token from the Discord Developer Portal.
+
+## Bot Setup
+
+Now that you have set up the bot on your local machine, you need to obtain a token from the Discord Developer Portal.
+
+### Developer Portal
+
+<Callout type="warning">
+    Do not share your bot's token with anyone, as it grants full access to your
+    bot.
+</Callout>
+
+1. Go to the [Discord Developer Portal](https://discord.com/developers/applications).
+2. Create a new application.
+3. In the sidebar, click on the "Bot" section.
+4. Here, you can find the token and name your bot.
+5. Click on "Reset Token" to generate a new token.
+6. Copy the bot's token and paste it in your `config.yml` file.
+
+```yml
+# Bot's token
+token: PASTE_TOKEN_HERE
+```
+
+7. Scroll down to "Privileged Gateway Intents", and enable all three options.
+
+### Inviting the bot
+
+1. In the sidebar, click on the "OAuth2" section.
+2. Scroll down to "OAuth2 URL Generator", and check the "bot" box.
+3. Scroll down to "Bot permissions", and check the "Administrator" box.
+4. Then scroll down again and copy the generated url.
+5. Select the server you want the bot to be added to.
+
+## Starting the bot
+
+After completeting the steps above, you can run the bot using the `run.bat` file we created earlier.
+
+<Callout type="info">
+    It might take a moment to start for the first time.
+</Callout>
+
+That's it! You have successfully setup the bot. If you are having an issues with the bot, join our [Discord](https://discord.gg/2QEYjQyH87) server for support.

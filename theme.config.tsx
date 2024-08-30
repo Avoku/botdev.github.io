@@ -1,22 +1,22 @@
-import { useConfig } from 'nextra-theme-docs'
-import { useRouter } from 'next/router'
-
-import Logo from './components/logo'
-import Footer from './components/footer'
-import Statistics from './components/statistics'
+import Logo from '~/components/logo'
+import Statistics from '~/components/statistics'
 
 export default {
     logo: <Logo />,
-    footer: {
-        text: <Footer />
-    },
+    primaryHue: 193,
     useNextSeoProps() {
         return {
-          titleTemplate: '%s | Avoku'
+            titleTemplate: '%s | Avoku',
         }
-      },
+    },
+    banner: {
+        text: '👍 Documentation updated.',
+    },
+    footer: {
+        text: 'Have a cookie! 🍪',
+    },
     project: {
-        link: 'https://github.com/avoku/avoku.github.io',
+        link: 'https://github.com/avoku/documentation',
     },
     chat: {
         link: 'https://discord.gg/zKe7dW7Z3T',
@@ -29,6 +29,6 @@ export default {
         extraContent: <Statistics />,
     },
     nextThemes: {
-        defaultTheme: 'dark'
-    }
+        defaultTheme: 'dark',
+    },
 }

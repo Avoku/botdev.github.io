@@ -1,27 +1,25 @@
 import { FileTree, Callout } from 'nextra/components'
 
-## Quick Setup
+# Simple Setup
 
-<Callout type="warning">
+Download the default image [here](/assets/default.png). The image file should be named `default.png`. Move it into the themes folder. There must be atleast one image named `default.png`.
+
+<Callout type="default">
     Ensure that the file tree mirrors the structure shown below.
 </Callout>
 
-Download the default image below by clicking [here](/assets/default.png). The image file should be named `default.png`. Afterwards, drag it into
-the `RankedBot/themes` folder. There must be atleast one image named `default.png`.
-
 <FileTree>
-    <FileTree.Folder name="RankedBot" defaultOpen>
+    <FileTree.Folder name="Bot" defaultOpen>
         <FileTree.Folder name="themes" defaultOpen>
             <FileTree.File name="default.png" />
         </FileTree.Folder>
     </FileTree.Folder>
 </FileTree>
 
-Now, for the font, you can download it by clicking [here](/assets/stats.otf). The file should be named `stats.otf`, Afterwards, drag it into
-the `RankedBot/fonts` folder.
+Now, for the font, you can download it [here](/assets/stats.otf). The file should be named `stats.otf`, Move it into the fonts folder.
 
 <FileTree>
-    <FileTree.Folder name="RankedBot" defaultOpen>
+    <FileTree.Folder name="Bot" defaultOpen>
         <FileTree.Folder name="fonts" defaultOpen>
             <FileTree.File name="stats.otf" />
         </FileTree.Folder>
@@ -30,10 +28,7 @@ the `RankedBot/fonts` folder.
 
 ## Advanced Setup
 
-If you're planning on creating a custom image, the image size has to be `960x540`. The reason is that it balances both performance and quality.
-
-If you want to modify the text values, such as location, size, and color, you can go over to your config. If you want to hide a stat,
-you can set the location to a high value, making it go out of bounds. An example config is shown below.
+To create a custom image, the image size has to be `960x540` because it balances both performance and quality. If you want to modify values such as position, size and colors, you have to do it within your config file. An example is shown below.
 
 ```yaml
 ign-size: 36

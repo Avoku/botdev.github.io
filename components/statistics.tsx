@@ -1,21 +1,25 @@
-import styles from './statistics.module.css'
-import { useResources } from '../utils/resources'
-
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
-import { faDownload } from '@fortawesome/free-solid-svg-icons'
+import useMetadata from '~/hooks/useMetadata'
 
 export default function Statistics() {
-    const resources = useResources()
-    if (!resources) return null
+    const metadata = useMetadata()
+
+    if (!metadata) {
+        // Show nothing
+        return null
+    }
 
     return (
-        <div
-            className={styles.container}
+        <h4
+            style={{
+                padding: '8px 12px',
+                textAlign: 'center',
+                fontWeight: 600,
+                color: '#01aede',
+                backgroundColor: '#01aede20',
+                borderRadius: '4px',
+            }}
         >
-            <div className={styles.downloads}>
-                <FontAwesomeIcon icon={faDownload} />
-                <h2>{resources.downloads}</h2>
-            </div>
-        </div>
+            Downloaded over {metadata.downloads} times!
+        </h4>
     )
 }
